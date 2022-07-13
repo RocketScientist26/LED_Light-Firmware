@@ -1,0 +1,2 @@
+../Core/Src/App/led.c:6:6:LED_Set	16	static
+../Core/Src/App/led.c:14:9:LED_State	4	static

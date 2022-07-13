@@ -1,0 +1,15 @@
+../Core/Src/App/w25q.c:8:6:W25Q_SPI_Error_Interrupt	8	static
+../Core/Src/App/w25q.c:12:6:W25Q_SPI_Receive_DMA_Interrupt	8	static
+../Core/Src/App/w25q.c:16:6:W25Q_SPI_Receive_DMA	16	static
+../Core/Src/App/w25q.c:19:6:W25Q_SPI_Receive	16	static
+../Core/Src/App/w25q.c:22:6:W25Q_SPI_Transmit	16	static
+../Core/Src/App/w25q.c:25:6:W25Q_Set_CS	16	static
+../Core/Src/App/w25q.c:34:6:W25Q_Write_Enable	24	static
+../Core/Src/App/w25q.c:43:9:W25Q_Busy	16	static
+../Core/Src/App/w25q.c:51:6:W25Q_Erase_Sector	24	static
+../Core/Src/App/w25q.c:63:6:W25Q_Write_Sector	32	static
+../Core/Src/App/w25q.c:81:6:W25Q_Read_Sector	24	static
+../Core/Src/App/w25q.c:95:6:W25Q_Read_Dev_Info	24	static
+../Core/Src/App/w25q.c:102:6:W25Q_Chip_Erase	16	static
+../Core/Src/App/w25q.c:114:6:W25Q_Read_DMA	32	static
+../Core/Src/App/w25q.c:126:6:W25Q_Read	32	static

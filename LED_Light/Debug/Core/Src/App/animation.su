@@ -1,0 +1,8 @@
+../Core/Src/App/animation.c:14:6:Animation_Timer_Error_Interrupt	8	static
+../Core/Src/App/animation.c:19:6:Animation_PWM_Pulse_Interrupt	8	static
+../Core/Src/App/animation.c:40:9:Animation_Busy	4	static
+../Core/Src/App/animation.c:43:6:Animation_Set_Bit	16	static
+../Core/Src/App/animation.c:50:6:Animation_Stop	8	static
+../Core/Src/App/animation.c:55:6:Animation_Display_Color	16	static
+../Core/Src/App/animation.c:67:6:Animation_Display_Image	16	static
+../Core/Src/App/animation.c:79:6:Animation_Init	8	static

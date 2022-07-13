@@ -1,0 +1,5 @@
+../Core/Src/App/animation_data.c:13:6:Animation_Data_Prefetch	24	static
+../Core/Src/App/animation_data.c:24:6:Animation_Data_Read	24	static
+../Core/Src/App/animation_data.c:42:9:Animation_Data_Get_Bit	16	static
+../Core/Src/App/animation_data.c:53:6:Animation_Data_Init	32	static
+../Core/Src/App/animation_data.c:121:6:Animation_Data_Buffer	8	static

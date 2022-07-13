@@ -1,0 +1,6 @@
+../Core/Src/App/usb.c:11:6:USB_Det_Interrupt	8	static
+../Core/Src/App/usb.c:15:9:USB_Det_Debounce_Read	16	static
+../Core/Src/App/usb.c:35:9:USB_Det_State	4	static
+../Core/Src/App/usb.c:38:9:USB_Enabled	4	static
+../Core/Src/App/usb.c:41:6:USB_Enable	16	static
+../Core/Src/App/usb.c:49:6:USB_Init	8	static
