@@ -63,26 +63,31 @@ void Animation_Data_Init(){
 		//Subtract CRC length
 		data_size -= 4;
 		//Calculate actual CRC
-		uint32_t data_crc_actual = 0;
 		uint32_t i = 0;
+		uint32_t data_crc_actual = 0;
+		if(data_size < ANIMATION_DATA_BUFFER_SIZE){
+			W25Q_Read(&animation_data[0], 0, data_size);
+			data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[0], data_size / 4);
+			i += data_size;
+		}else{
+			W25Q_Read(&animation_data[i], i, ANIMATION_DATA_BUFFER_SIZE);
+			data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[0], ANIMATION_DATA_BUFFER_SIZE / 4);
+			i += ANIMATION_DATA_BUFFER_SIZE;
+		}
 		while(i != data_size){
 			if((data_size - i) < ANIMATION_DATA_BUFFER_SIZE){
 				W25Q_Read(&animation_data[i], i, data_size - i);
-				//!TBD
-				data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[i], (data_size - i) / 4);
+				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[i], (data_size - i) / 4);
 				i += data_size - i;
 			}else{
 				W25Q_Read(&animation_data[i], i, ANIMATION_DATA_BUFFER_SIZE);
-				//!TBD
-				data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[i], ANIMATION_DATA_BUFFER_SIZE / 4);
+				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[i], ANIMATION_DATA_BUFFER_SIZE / 4);
 				i += ANIMATION_DATA_BUFFER_SIZE;
 			}
 		}
 
 		//Check CRC
-		//!TBD
-		//if(data_crc_actual == data_crc){
-		if(1){
+		if(data_crc_actual == data_crc){
 			//Read animation data configuration
 			uint32_t data = 0;
 			W25Q_Read((uint8_t *)&data, 4, 2);
