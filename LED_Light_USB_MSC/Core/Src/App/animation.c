@@ -51,11 +51,24 @@ void Animation_Stop(){
 	animation_i = 0;
 	animation_busy = 0;
 }
-void Animation_Display_Color(uint32_t color){
+void Animation_Display_Color(uint32_t color_grb){
 	if(animation_data_config.image_size){
+		uint8_t color_g = (uint8_t)((uint32_t)color_grb >> 16);
+		color_g = (color_g & 0xF0) >> 4 | (color_g & 0x0F) << 4;
+		color_g = (color_g & 0xCC) >> 2 | (color_g & 0x33) << 2;
+		color_g = (color_g & 0xAA) >> 1 | (color_g & 0x55) << 1;
+		uint8_t color_r = (uint8_t)((uint32_t)color_grb >> 8);
+		color_r = (color_r & 0xF0) >> 4 | (color_r & 0x0F) << 4;
+		color_r = (color_r & 0xCC) >> 2 | (color_r & 0x33) << 2;
+		color_r = (color_r & 0xAA) >> 1 | (color_r & 0x55) << 1;
+		uint8_t color_b = (uint8_t)((uint32_t)color_grb);
+		color_b = (color_b & 0xF0) >> 4 | (color_b & 0x0F) << 4;
+		color_b = (color_b & 0xCC) >> 2 | (color_b & 0x33) << 2;
+		color_b = (color_b & 0xAA) >> 1 | (color_b & 0x55) << 1;
+
 		animation_busy = 1;
 		animation_i = 0;
-		animation_color = color;
+		animation_color = ((uint32_t)color_g <<16) | ((uint32_t)color_r <<8) | (uint32_t)color_b;
 		animation_mode = ANIMATION_MODE_COLOR;
 
 		HAL_TIM_PWM_PulseFinishedCallback(&htim1);

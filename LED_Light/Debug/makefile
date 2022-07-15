@@ -61,8 +61,8 @@ all: main-build
 main-build: LED_Light.elf secondary-outputs
 
 # Tool invocations
-LED_Light.elf LED_Light.map: $(OBJS) $(USER_OBJS) D:\LED\FW\LED_Light\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LED_Light.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\LED\FW\LED_Light\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_Light.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LED_Light.elf LED_Light.map: $(OBJS) $(USER_OBJS) D:\Gaga\GITTMP\LED_Light-Firmware\LED_Light\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LED_Light.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Gaga\GITTMP\LED_Light-Firmware\LED_Light\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_Light.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -4,7 +4,7 @@
 #include "button.h"
 #include "led.h"
 
-#define FRAME_DELAY 33
+#define FRAME_DELAY 250
 
 uint32_t i = 0;
 

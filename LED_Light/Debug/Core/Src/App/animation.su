@@ -3,6 +3,6 @@
 ../Core/Src/App/animation.c:40:9:Animation_Busy	4	static
 ../Core/Src/App/animation.c:43:6:Animation_Set_Bit	16	static
 ../Core/Src/App/animation.c:50:6:Animation_Stop	8	static
-../Core/Src/App/animation.c:55:6:Animation_Display_Color	16	static
-../Core/Src/App/animation.c:67:6:Animation_Display_Image	16	static
-../Core/Src/App/animation.c:79:6:Animation_Init	8	static
+../Core/Src/App/animation.c:55:6:Animation_Display_Color	24	static
+../Core/Src/App/animation.c:80:6:Animation_Display_Image	16	static
+../Core/Src/App/animation.c:92:6:Animation_Init	8	static

@@ -11,6 +11,6 @@ void Animation_PWM_Pulse_Interrupt();
 uint8_t Animation_Busy();
 void Animation_Set_Bit(uint8_t bit);
 void Animation_Stop();
-void Animation_Display_Color(uint32_t image);
+void Animation_Display_Color(uint32_t color_grb);
 void Animation_Display_Image(uint16_t image);
 void Animation_Init();
