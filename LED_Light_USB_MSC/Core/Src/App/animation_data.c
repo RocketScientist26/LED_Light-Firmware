@@ -70,18 +70,18 @@ void Animation_Data_Init(){
 			data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[0], data_size / 4);
 			i += data_size;
 		}else{
-			W25Q_Read(&animation_data[i], i, ANIMATION_DATA_BUFFER_SIZE);
+			W25Q_Read(&animation_data[0], i, ANIMATION_DATA_BUFFER_SIZE);
 			data_crc_actual = HAL_CRC_Calculate(&hcrc, (uint32_t *)&animation_data[0], ANIMATION_DATA_BUFFER_SIZE / 4);
 			i += ANIMATION_DATA_BUFFER_SIZE;
 		}
 		while(i != data_size){
 			if((data_size - i) < ANIMATION_DATA_BUFFER_SIZE){
-				W25Q_Read(&animation_data[i], i, data_size - i);
-				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[i], (data_size - i) / 4);
+				W25Q_Read(&animation_data[0], i, data_size - i);
+				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[0], (data_size - i) / 4);
 				i += data_size - i;
 			}else{
-				W25Q_Read(&animation_data[i], i, ANIMATION_DATA_BUFFER_SIZE);
-				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[i], ANIMATION_DATA_BUFFER_SIZE / 4);
+				W25Q_Read(&animation_data[0], i, ANIMATION_DATA_BUFFER_SIZE);
+				data_crc_actual = HAL_CRC_Accumulate(&hcrc, (uint32_t *)&animation_data[0], ANIMATION_DATA_BUFFER_SIZE / 4);
 				i += ANIMATION_DATA_BUFFER_SIZE;
 			}
 		}
