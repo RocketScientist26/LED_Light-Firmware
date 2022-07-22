@@ -99,7 +99,7 @@ void App_Loop(){
 						Example_Animation_Play(1, 20, 11, 50);
 						//Stay still for some time after heart animation
 						if(example_current_animation == 5){
-							HAL_Delay(1000);
+							HAL_Delay(2000);
 						}
 					break;
 					case 5:
