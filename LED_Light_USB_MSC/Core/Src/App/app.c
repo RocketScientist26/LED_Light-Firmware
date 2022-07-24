@@ -113,6 +113,12 @@ void App_Loop(){
 
 				}
 			}
+
+			//If we have just one image, display it
+			if(example_run && (animation_data_config.images == 1)){
+				Animation_Display_Image(0);
+				HAL_Delay(100);
+			}
 			///PART OF EXAMPLE ANIMATION TO HERE
 		}
 	}
