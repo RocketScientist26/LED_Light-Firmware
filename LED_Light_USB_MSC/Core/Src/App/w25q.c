@@ -48,7 +48,7 @@ uint8_t W25Q_Busy(){
 	W25Q_Set_CS(1);
 	return (tmp & 1);
 }
-void W25Q_Erase_Sector(uint32_t sector){
+void W25Q_Erase_Sector(uint16_t sector){
 	while(W25Q_Busy());
 	W25Q_Write_Enable(1);
 	while(W25Q_Busy());
@@ -56,6 +56,7 @@ void W25Q_Erase_Sector(uint32_t sector){
 	uint8_t cmd = W25Q_CMD_SECTOR_ERASE;
 	W25Q_SPI_Transmit(&cmd, 1);
 	uint32_t address = sector * W25Q_SECTOR_SIZE;
+	address = ((address >> 16) & 0xff) | (address & 0xff00) | ((address << 16) & 0xff0000);
 	W25Q_SPI_Transmit((uint8_t *)&address, 3);
 	W25Q_Set_CS(1);
 	while(W25Q_Busy());
@@ -70,7 +71,8 @@ void W25Q_Write_Sector(uint8_t* data, uint16_t sector){
 		while(W25Q_Busy());
 		W25Q_Set_CS(0);
 		W25Q_SPI_Transmit(&cmd, 1);
-		W25Q_SPI_Transmit((uint8_t *)&address, 3);
+		uint32_t address_lsb = ((address >> 16) & 0xff) | (address & 0xff00) | ((address << 16) & 0xff0000);
+		W25Q_SPI_Transmit((uint8_t *)&address_lsb, 3);
 		W25Q_SPI_Transmit(&data[W25Q_PAGE_SIZE * i], W25Q_PAGE_SIZE);
 		W25Q_Set_CS(1);
 		address += W25Q_PAGE_SIZE;

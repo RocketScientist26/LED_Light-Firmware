@@ -7,9 +7,9 @@
 ../Core/Src/App/w25q.c:34:6:W25Q_Write_Enable	24	static
 ../Core/Src/App/w25q.c:43:9:W25Q_Busy	16	static
 ../Core/Src/App/w25q.c:51:6:W25Q_Erase_Sector	24	static
-../Core/Src/App/w25q.c:63:6:W25Q_Write_Sector	32	static
-../Core/Src/App/w25q.c:81:6:W25Q_Read_Sector	24	static
-../Core/Src/App/w25q.c:95:6:W25Q_Read_Dev_Info	24	static
-../Core/Src/App/w25q.c:102:6:W25Q_Chip_Erase	16	static
-../Core/Src/App/w25q.c:114:6:W25Q_Read_DMA	32	static
-../Core/Src/App/w25q.c:126:6:W25Q_Read	32	static
+../Core/Src/App/w25q.c:64:6:W25Q_Write_Sector	32	static
+../Core/Src/App/w25q.c:83:6:W25Q_Read_Sector	24	static
+../Core/Src/App/w25q.c:97:6:W25Q_Read_Dev_Info	24	static
+../Core/Src/App/w25q.c:104:6:W25Q_Chip_Erase	16	static
+../Core/Src/App/w25q.c:116:6:W25Q_Read_DMA	32	static
+../Core/Src/App/w25q.c:128:6:W25Q_Read	32	static

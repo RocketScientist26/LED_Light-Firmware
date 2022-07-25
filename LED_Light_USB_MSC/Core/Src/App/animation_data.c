@@ -55,7 +55,7 @@ void Animation_Data_Init(){
 	//Check size
 	uint32_t data_size = 0;
 	W25Q_Read((uint8_t *)&data_size, 0, 4);
-	if(data_size <= ANIMATION_DATA_MAX_SIZE){
+	if((data_size > ANIMATION_DATA_HEADER_SIZE) && (data_size <= ANIMATION_DATA_MAX_SIZE)){
 		//Read CRC
 		uint32_t data_crc = 0;
 		W25Q_Read((uint8_t *)&data_crc, data_size - 4, 4);

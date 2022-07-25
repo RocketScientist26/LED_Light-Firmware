@@ -45,7 +45,7 @@ void W25Q_Set_CS(uint8_t cs);
 
 void W25Q_Write_Enable(uint8_t enable);
 uint8_t W25Q_Busy();
-void W25Q_Erase_Sector(uint32_t sector);
+void W25Q_Erase_Sector(uint16_t sector);
 void W25Q_Write_Sector(uint8_t* data, uint16_t sector);
 void W25Q_Read_DMA(uint8_t *data, uint16_t length, uint32_t address);
 void W25Q_Read(uint8_t *data, uint32_t address, uint16_t length);
